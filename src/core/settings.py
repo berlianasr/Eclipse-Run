@@ -1,0 +1,5 @@
+WIDTH = 960
+HEIGHT = 540
+FPS = 60
+TITLE = "Eclipse Run"
+BG_COLOR = (240, 240, 240)
