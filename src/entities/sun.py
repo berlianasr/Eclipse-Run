@@ -2,7 +2,6 @@
 import pygame
 from .player_base import PlayerBase
 
-
 class Sun(PlayerBase):
     def __init__(self, x, y):
         super().__init__(x, y, (255, 210, 60))  # kuning

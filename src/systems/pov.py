@@ -1,19 +1,37 @@
 # src/systems/pov.py
-import enum
+from enum import Enum
 
-class POVMode(enum.Enum):
-    SIDE = 0
-    TOP = 1
+
+class POVMode(Enum):
+    SIDE = "side"  # Gravitasi ke bawah, jalan di tanah
+    TOP = "top"    # Gravitasi ke belakang, jalan di tembok
+
 
 class POVController:
+    """
+    Kontrol mode POV (Point of View) game.
+    SIDE: Player jalan di tanah (gravitasi normal ke bawah)
+    TOP: Player jalan di tembok/background (gravitasi ke belakang)
+    """
+    
     def __init__(self):
         self.mode = POVMode.SIDE
-
+    
     def toggle(self):
-        self.mode = POVMode.TOP if self.mode == POVMode.SIDE else POVMode.SIDE
-
-    def is_side(self):
+        """Toggle antara SIDE dan TOP mode."""
+        if self.mode == POVMode.SIDE:
+            self.mode = POVMode.TOP
+        else:
+            self.mode = POVMode.SIDE
+    
+    def is_side(self) -> bool:
+        """Return True jika mode SIDE (normal)."""
         return self.mode == POVMode.SIDE
-
-    def is_top(self):
+    
+    def is_top(self) -> bool:
+        """Return True jika mode TOP (tembok)."""
         return self.mode == POVMode.TOP
+    
+    def get_mode(self) -> POVMode:
+        """Return mode POV saat ini."""
+        return self.mode
