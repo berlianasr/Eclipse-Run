@@ -8,30 +8,23 @@ class POVMode(Enum):
 
 
 class POVController:
-    """
-    Kontrol mode POV (Point of View) game.
-    SIDE: Player jalan di tanah (gravitasi normal ke bawah)
-    TOP: Player jalan di tembok/background (gravitasi ke belakang)
-    """
-    
     def __init__(self):
         self.mode = POVMode.SIDE
     
     def toggle(self):
-        """Toggle antara SIDE dan TOP mode."""
+        # Toggle antara SIDE dan TOP mode
         if self.mode == POVMode.SIDE:
             self.mode = POVMode.TOP
         else:
             self.mode = POVMode.SIDE
     
     def is_side(self) -> bool:
-        """Return True jika mode SIDE (normal)."""
+        # Return True jika mode SIDE (normal)
         return self.mode == POVMode.SIDE
     
     def is_top(self) -> bool:
-        """Return True jika mode TOP (tembok)."""
+        #Return True jika mode TOP (tembok)
         return self.mode == POVMode.TOP
     
     def get_mode(self) -> POVMode:
-        """Return mode POV saat ini."""
         return self.mode

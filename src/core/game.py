@@ -26,7 +26,7 @@ class Game:
         self.current_level = level_num
         
         if level_num == 1:
-            self.scene = Level3(self)
+            self.scene = Level1(self)
         elif level_num == 2:
             self.scene = Level2(self)
         elif level_num == 3:

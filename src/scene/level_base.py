@@ -179,4 +179,4 @@ class LevelBase:
 
         # HUD
         font = pygame.font.SysFont(None, 32)
-        surface.blit(font.render(f"POV: {'SIDE' if is_side else 'TOP'}", True, (40,40,40)), (16, 16))
+        surface.blit(font.render(f"POV: {'SIDE' if is_side else 'TOP'}", True, (40,40,40)), (5,5))
