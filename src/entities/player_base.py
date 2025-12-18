@@ -8,8 +8,8 @@ class PlayerBase:
     def __init__(self, x, y, color, character_name='moon'):
         self.x = x
         self.y = y
-        self.w = 40  # Enlarged from 28 to 40 for better visibility
-        self.h = 40  # Enlarged from 28 to 40
+        self.w = 40  
+        self.h = 40  
         self.color = color
         self.speed = 3
         self.character_name = character_name  # 'moon' atau 'sun'
@@ -21,8 +21,8 @@ class PlayerBase:
         self.animation_timer = 0.0
         self.animation_speed = 0.1  # seconds per frame
         self.facing_right = True
-        self.last_dx = 0  # Track last horizontal movement for facing direction
-        self.is_hitting = False  # Flag untuk hit animation
+        self.last_dx = 0  
+        self.is_hitting = False  #hit animation
         self.hit_timer = 0.0
         self.hit_duration = 0.2  # Duration to show hit animation
         
@@ -89,10 +89,10 @@ class PlayerBase:
     def draw_side(self, screen):
         """Draw character at SIDE POV dengan sprite"""
         if self.is_hitting:
-            # Show hit animation
+            #hit animation
             sprite = self._get_sprite('hit')
         else:
-            # Alternate between walk_a dan walk_b based on animation frame
+            
             if self.animation_frame == 0:
                 sprite = self._get_sprite('walk_a')
             else:
@@ -108,10 +108,9 @@ class PlayerBase:
     def draw_top(self, screen):
         """Draw character at TOP POV dengan sprite - flip based on facing direction"""
         if self.is_hitting:
-            # Show hit animation
+            #hit animation
             sprite = self._get_sprite('hit')
         else:
-            # Alternate between top_a dan top_b based on animation frame
             if self.animation_frame == 0:
                 sprite = self._get_sprite('top_a')
             else:

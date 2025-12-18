@@ -26,7 +26,7 @@ def main():
     # Inject manager ke screen (agar bisa switch)
     main_menu.manager = manager
 
-    play_background_music(volume=0.4)
+    play_background_music(volume=0.2)
 
     running = True
     while running:

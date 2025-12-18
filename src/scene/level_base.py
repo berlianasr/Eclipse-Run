@@ -178,14 +178,14 @@ class LevelBase(BaseScreen):
         t_moon, _, _ = self._get_tile_under_feet(self.moon)
 
         if t_sun == T_HOLE or t_moon == T_HOLE:
-            print("MATI: Masuk Lubang!")
+            print("MATI: Terkena Black Hole!")
             return 'hole'
         
         # Cek Tertimpa Balok (Black Hole)
         if self.blocks_active and self.pov.is_side():
             for b in self.blocks:
                 if b.rect.colliderect(self.sun.get_rect()) or b.rect.colliderect(self.moon.get_rect()):
-                    print("MATI: Tertimpa Balok (Black Hole)!")
+                    print("MATI: Tertimpa Balok!")
                     return 'block'
         
         return None
