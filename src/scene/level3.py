@@ -2,7 +2,7 @@ from src.scene.level_base import LevelBase
 from src.environment.arena import create_arena_from_layout
 
 class Level3(LevelBase):
-    def __init__(self, game):
+    def __init__(self, manager, screen_width: int, screen_height: int):
         level_map = [
             "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
             "T............................T",
@@ -13,7 +13,7 @@ class Level3(LevelBase):
             "T...T.T.TdTdTT.TTeTeT.T..T...T",
             "T...T.T.T....T.T....T.T..T...T",
             "T...T.T.T....T.T....T.T..T...T",
-            "T...T.T.T..F.T.T.F..T.T..T...T",
+            "T...T.T.T....T.T.F..T.T..T...T",
             "T...T.T.TTTT.T.T.TTTT.T..T...T",
             "T...T.T......T.T......T..T...T",
             "T...T.TTTTTTTT.TTTTTTTT..T...T",
@@ -27,5 +27,4 @@ class Level3(LevelBase):
             level_map, 
             falling_block_config={'interval': 30, 'speed': 3}
         )
-        
-        super().__init__(game, arena)
+        super().__init__(manager, screen_width, screen_height, arena, level_num=3)
